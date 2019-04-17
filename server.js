@@ -26,7 +26,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsScraper5";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
 //Connect to the Mongo DB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 // mongoose.connect("mongodb://localhost/newsScraper5", { useNewUrlParser: true });
@@ -49,30 +49,54 @@ app.get("/scrape", function(req,res) {
             result.link = $(this).children("h3").children("a").attr("href");
             result.publishedTime = $(this).children("time").text();
 
+            console.log("Result from route");
+            console.log("----------------------------------------");
             console.log(result);
+            console.log("----------------------------------------");
+
             // Create articles using the result object
             db.Article.create(result).then(function(dbArticle){
-                //View article in console
-                console.log(dbArticle);
+                //View articles in console
+                console.log(dbArticle);           
             }).catch(function(err) {
                 console.log("there is an error");
                 // return res.json(err);
             });
         });
 
-        //If the scraping worked, send message to user
-        res.send("Scraping Complete");
     });
 });
 
 //GET route for getting all articles from database
+app.get("/all", function(req,res) {
+    db.Article.find({}).then(function(dbArticle) {
+        res.json(dbArticle);
+    }).catch(function(err) {
+        res.json(err);
+    });
+});
 
 //GET route for grabbing a specific Article by id and populate it with a note
+app.get("/all/:id", function(req,res) {
+    db.Article.findOne({
+        _id: req.params.id
+    }).populate("note").then(function(dbArticle) {
+        res.json(dbArticle)
+    }).catch(function(err) {
+        res.json(err);
+    });
+});
 
 //POST route for saving or updating an Article's note
-
-
-
+app.post("/all/:id", function(req,res) {
+    db.Note.create(req.body).then(function(dbNote) {
+        return db.Article.findOneAndUpdate({_id:req.params.id}, {note: dbNote._id }, {new:true});
+    }).then(function(dbArticle) {
+        res.json(dbArticle);
+    }).catch(function(err) {
+        res.json(err);
+    })
+});
 
 //Start server
 app.listen(PORT, function() {
