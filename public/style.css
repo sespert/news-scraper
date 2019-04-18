@@ -1,20 +1,39 @@
-body { background-color: #F2F6D0 }
-#wrapper {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5%;
+body { 
+  background-color: #F2F6D0 
+}
+#header {
+  height: 600px;
+  text-align: center;
+  font-family: 'Patua One', serif;
+  padding-top: 12%;
+  background-image: url("assets/newBackground.png");
+}
+h1 {
+  font-size: 50px;
+  width: 800px;
+  height: 100px;
+  margin: auto;
+  padding: 1% 0 1% 0;
+  background-color: rgb(150, 143, 105);
 }
 #articles {
-  display: inline-block;
-  overflow: auto;
-  width: 60%;
-  height: 700px;
+  margin-top: 2%;
+  height: auto;
+
+}
+#articles a {
+  color: black;
+  text-decoration: underline; 
+}
+#articles button {
+  margin-top: 1%;
 }
 #notes {
-  float: right;
   width: 30%;
+  height: 600px;
+  margin: auto;
 }
+
 textarea, input {
   display: block;
   width: 100%;
@@ -27,4 +46,10 @@ input {
 textarea {
   height: 200px;
   font-size: 18px;
+}
+#footer {
+  background-color:black;
+  font-family: 'Georgia', Times, Times New Roman, serif; 
+  color: #ffffff;  
+  height: 50px;
 }
