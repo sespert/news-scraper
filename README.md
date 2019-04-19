@@ -11,7 +11,7 @@ With this application you can scrape news articles from The Miami Herald
 
 Javascript, Node.js, ExpressJS, Handlebars, Mongoose, Cheerios, Axios.
 
-[See it in action!](https://immense-refuge-35002.herokuapp.com/)
+[See it in action!](https://mighty-savannah-68418.herokuapp.com/)
 
 ## Copyright
 
