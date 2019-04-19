@@ -1,0 +1,33 @@
+
+    <div id="header">
+        <h1 class="border round border-dark">Scrape the Miami Herald</h1>
+        <br>
+        <button class="btn btn-lg" id="scrape">Scrape for Articles</button>
+        <button class="btn btn-lg" id="clear">Clear All</button>
+        <br>
+        <br>
+        <div id="notes"></div>   
+    </div>
+    <div class="container">
+    <div id="articles">
+        {{#each articles}}
+            <div class='card bg-warning mb-3 text-center'>
+                <div class='card-body'>
+                    <h5 class='card-title'>
+                        {{this.title}}
+                    </h5>
+                    <p>{{this.summary}}</p>
+                    <a href={{this.link}} class='card-link' target='_blank'>Link to the Article</a>
+                    <br>
+                    <button id='noteBtn' data-id={{this._id}}>Add Note</button>
+                </div>
+            </div>
+        {{/each}}        
+    </div>
+   
+</div>
+<nav class="navbar justify-content-center fixed-bottom" id="footer">
+    <div class="footer-copyright">© Copyright 2019 SEG</div>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>

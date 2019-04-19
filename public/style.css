@@ -1,25 +1,35 @@
 body { 
-  background-color: #F2F6D0 
+  background-color: #F2F6D0;
+
 }
 #header {
-  height: 600px;
+  height: 500px;
   text-align: center;
   font-family: 'Patua One', serif;
-  padding-top: 12%;
+  padding-top: 2%;
   background-image: url("assets/newBackground.png");
+}
+.btn {
+  background-color: #ffd54f;
+  margin-right: 70px;
+}
+.container {
+  height: auto;
+  text-align: center;
+  font-family: 'Patua One', serif;
+  /* padding-top: 12%; */
 }
 h1 {
   font-size: 50px;
-  width: 800px;
-  height: 100px;
+  width: auto;
+  height: auto;
   margin: auto;
   padding: 1% 0 1% 0;
-  background-color: rgb(150, 143, 105);
+  background-color: #ffd54f ;
 }
 #articles {
   margin-top: 2%;
   height: auto;
-
 }
 #articles a {
   color: black;
@@ -29,11 +39,14 @@ h1 {
   margin-top: 1%;
 }
 #notes {
-  width: 30%;
-  height: 600px;
+  width: 75%;
+  height: auto;
   margin: auto;
 }
-
+#notes .card-title {
+  height: auto;
+  padding-top: 0;
+}
 textarea, input {
   display: block;
   width: 100%;
@@ -44,7 +57,7 @@ input {
   font-size: 24px;
 }
 textarea {
-  height: 200px;
+  height: 100px;
   font-size: 18px;
 }
 #footer {

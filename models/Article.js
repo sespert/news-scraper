@@ -14,9 +14,8 @@ var ArticleSchema = new Schema({
         unique: true,
         required: true
     },
-    publishedTime: {
-        type: String,
-        required: true
+    summary: {
+        type: String
     },
     note: {
         type: Schema.Types.ObjectId,
