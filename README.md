@@ -5,7 +5,7 @@ With this application you can scrape news articles from The Miami Herald
 
 - The app follows an MVC design pattern. Uses Node, Cheerios, Axios and Mongoose to query, route and save the data, and uses Handlebars to generate the HTML.
 
-![Home Page](https://github.com/sespert/burger/blob/master/public/assets/img/BurgerAppScreen.png)
+![Home Page](https://github.com/sespert/news-scraper/blob/master/public/assets/screenshot.png)
 
 ## Tech/Framed Used
 
