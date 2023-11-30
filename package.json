@@ -14,10 +14,10 @@
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.2",
+    "express-handlebars": "^7.0.0",
     "mongoose": "^5.12.2",
     "nodemon": "^1.18.11",
-    "snyk": "^1.278.2"
+    "snyk": "^1.685.0"
   },
   "snyk": true
 }
